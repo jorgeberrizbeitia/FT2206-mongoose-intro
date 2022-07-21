@@ -17,6 +17,7 @@ mongoose
   .then((response) => {
     console.log("La collection ha sido borrada correctamente");
 
+    // METODOS DE CREATE
     // agregamos un nuevo documento => .create
     return StudentModel.create({
       name: "Malva",
@@ -48,6 +49,28 @@ mongoose
   })
   .then((response) => {
     console.log(response);
+
+    // METODOS DE UPDATE
+    // requires dos argumentos
+    // 1. el query o la condicion
+    // 2. la modificacion que queremos hacer
+    // return StudentModel.findOneAndUpdate({name: "Miguel"}, {likesPokemon: true})
+    return StudentModel.findOneAndUpdate({name: "Pablo"}, {$push: {pizzaToppings: "piña"}}, {new: true})
+    // $push para agregar a un array
+    // $pull para remover de un array
+    // {new: true} se asegura que la respues va a ser la informacion actualizada
+  })
+  .then((response) => {
+    console.log(response) // la informacion desactualizada de forma predeterminada
+    // {new: true} se asegura que la respues va a ser la informacion actualizada
+    // console.log("Miguel ha sido actualizado")
+    console.log("Ahora a Pablo le gusta la pizza con piña")
+
+    // METODOS DE BORRAR
+    return StudentModel.findOneAndDelete({name: "Paula"})
+  })
+  .then((response) => {
+    console.log("Elemento borrado")
   })
   .catch((err) => {
     console.log(err);
