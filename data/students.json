@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Paula",
+    "candy": 4000,
+    "likesPokemon": true,
+    "pizzaToppings": ["piña", "jamon"]
+  },
+  {
+    "name": "Miguel",
+    "candy": 2000,
+    "likesPokemon": false,
+    "pizzaToppings": ["anchoas", "pepperoni"]
+  },
+  {
+    "name": "Manu",
+    "candy": 10000,
+    "likesPokemon": true,
+    "pizzaToppings": ["jamon"]
+  },
+  {
+    "name": "Pablo",
+    "likesPokemon": true
+  }
+]
